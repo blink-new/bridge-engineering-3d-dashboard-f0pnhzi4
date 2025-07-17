@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 84% 5%; /* #0F172A */
+    --foreground: 210 40% 98%; /* #F8FAFC */
+    --card: 215 28% 17%; /* #1E293B */
+    --card-foreground: 210 40% 98%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 221 83% 53%; /* #2563EB */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 38 92% 50%; /* #F59E0B */
+    --secondary-foreground: 222 84% 5%;
+    --muted: 215 16% 47%; /* #334155 */
+    --muted-foreground: 215 20% 65%; /* #94A3B8 */
+    --accent: 38 92% 50%; /* #F59E0B */
+    --accent-foreground: 222 84% 5%;
+    --destructive: 0 84% 60%; /* #EF4444 */
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 16% 47%; /* #334155 */
+    --input: 215 28% 17%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%; /* #020617 */
+    --foreground: 210 40% 98%;
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 222 84% 5%;
+    --muted: 215 16% 47%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 84% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 16% 47%;
+    --input: 215 28% 17%;
+    --ring: 221 83% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 300vh; /* Allow scrolling for camera movement */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    background: hsl(215deg 28% 17% / 80%);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(215deg 16% 47% / 30%);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px hsl(221deg 83% 53% / 30%);
+  }
+
+  .completed-glow {
+    box-shadow: 0 0 20px hsl(142deg 76% 36% / 50%);
+  }
+
+  .water-wave {
+    background: linear-gradient(45deg, 
+      hsl(221deg 83% 53% / 30%) 0%, 
+      hsl(213deg 94% 68% / 20%) 50%, 
+      hsl(221deg 83% 53% / 30%) 100%);
+  }
+}
